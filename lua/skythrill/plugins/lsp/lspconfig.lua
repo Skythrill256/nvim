@@ -81,7 +81,12 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
-
+    
+    -- configure c++ lsp
+    lspconfig["clangd"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
     -- configure solidity server
     lspconfig["solidity_ls_nomicfoundation"].setup({
       capabilities = capabilities,
