@@ -10,6 +10,11 @@ return {
     color = "#428850",
     cterm_color = "65",
     name = "Zsh"
+  },
+  vue ={
+    icon = "",
+    color = "green",
+
   }
  };
  -- globally enable different highlight colors per icon (default to true)

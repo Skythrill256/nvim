@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({ 
   { import = "skythrill.plugins" }, { import = "skythrill.plugins.lsp" } }, {
   install = {
-    colorscheme = { "solarized-osaka" },
+    colorscheme = { "catppuccin" },
   },
   checker = {
     enabled = true,

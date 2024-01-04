@@ -38,7 +38,8 @@ return {
         "pyright",
         "volar",
         "solidity_ls_nomicfoundation",
-        "clangd"
+        "clangd",
+        "vimls"
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed

@@ -80,10 +80,17 @@ return {
     lspconfig["volar"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      filetypes ={"vue"},
     })
     
     -- configure c++ lsp
     lspconfig["clangd"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    --configure vim lsp
+    lspconfig["vimls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -97,6 +104,11 @@ return {
     lspconfig["tsserver"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      init_options ={
+        preferences = {
+          disableSuggestions = true,
+        },
+      }
     })
 
     -- configure css server
@@ -159,6 +171,21 @@ return {
     lspconfig["pyright"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+    })
+      local util = require "lspconfig/util"
+    -- configure rust server
+    lspconfig["rust_analyzer"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes ={"rust"},
+      root_dir = util.root_pattern("Cargo.toml"),
+      settings ={
+        ['rust_analyzer']={
+          cargo ={
+            allFeatures = true,
+          },
+        },
+      },
     })
 
     -- configure lua server (with special settings)
