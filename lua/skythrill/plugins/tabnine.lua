@@ -12,6 +12,7 @@ return {
     exclude_filetypes = {"TelescopePrompt", "NvimTree"},
     log_file_path = nil, -- absolute path to Tabnine log file
   })
+  vim.keymap.set("x", "<leader>q", "", { noremap = true, callback = require("tabnine.chat").open })
  end,
 }
 
