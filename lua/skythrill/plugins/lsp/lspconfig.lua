@@ -117,6 +117,12 @@ return {
 			),
 		})
 
+		--configure JSON LSP
+		lspconfig["jsonls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "json" },
+		})
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
