@@ -76,6 +76,20 @@ return {
 			on_attach = on_attach,
 		})
 
+    -- configure go-language-server
+   lspconfig["gopls"].setup({
+     capabilities = capabilities,
+     on_attach = on_attach,
+     cmd ={"gopls"},
+      filetypes = {"go","gomod","gowork","gotmpl"},
+      root_dir =  util.root_pattern ("go.work","got.mod",".git"),
+      settings ={
+        gopls ={
+          completeUnimported = true,
+        },
+      },
+   })
+
 		-- configure vue server
 		lspconfig["volar"].setup({
 			capabilities = capabilities,
@@ -193,7 +207,7 @@ return {
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" ,"rust" },
 			init_options = {
 				html = {
 					options = {
