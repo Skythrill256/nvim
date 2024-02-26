@@ -1,6 +1,6 @@
 return {
     "okuuva/auto-save.nvim",
-  cmd = "ASToggle", -- optional for lazy loading on command
+    cmd = "ASToggle", -- optional for lazy loading on command
   event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
   opts = {
     enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)

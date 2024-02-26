@@ -6,7 +6,7 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.biome,
-        null_ls.builtins.formatting.rustfmt,
+       -- null_ls.builtins.formatting.rustfmt,
       },
 		})
 		vim.keymap.set("n", "<leader>b", vim.lsp.buf.format, {})
