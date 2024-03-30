@@ -76,6 +76,15 @@ return {
 			on_attach = on_attach,
 		})
 
+    -- configure java server
+    lspconfig["jdtls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      cmd = {"jdtls"},
+      filetypes = {"java"},
+      root_dir = util.root_pattern("pom.xml", "gradle.build", ".git"),
+    })
+
     -- configure go-language-server
    lspconfig["gopls"].setup({
      capabilities = capabilities,
@@ -89,18 +98,15 @@ return {
         },
       },
    })
+   
+   
 
 		-- configure vue server
 		lspconfig["volar"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-			init_options = {
-				typescript = {
-					tsdk = "/path/to/.npm/lib/node_modules/typescript/lib",
-				},
-			},
-		})
+			})
 
 		-- configure c++ lsp
 		lspconfig["clangd"].setup({
