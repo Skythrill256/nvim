@@ -76,6 +76,15 @@ return {
 			on_attach = on_attach,
 		})
 
+    --configure gleam server
+    lspconfig["gleam"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      cmd = {"gleam", "lsp"},
+      filetypes = {"gleam"},
+      root_dir = util.root_pattern("gleam.toml", ".git"),
+    })
+
     -- configure java server
     lspconfig["jdtls"].setup({
       capabilities = capabilities,

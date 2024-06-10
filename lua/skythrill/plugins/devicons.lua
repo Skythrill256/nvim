@@ -61,6 +61,16 @@ return {
 				color = "#81e043",
 				name = "Log",
 			},
+      ["astro"] = {
+        icon = "󰯬",
+        color = "#f1502f",
+        name = "Astro",
+      },
+      ["gleam"] = {
+        icon = "󰦥",
+        color = "#FFC0CB",
+        name = "Gleam",
+      }
 		},
 	},
 }

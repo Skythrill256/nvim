@@ -41,7 +41,8 @@ return {
         "clangd",
         "vimls",
         "rust_analyzer",
-        "jdlts"
+        "jdlts",
+        "gleam"
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
